@@ -18,8 +18,13 @@ class MyWindow(QMainWindow):
         self.btn.setText("Click Me!")
         self.btn.clicked.connect(self.clicked_button)
 
-    def clicked_button():
+    def clicked_button(self):
+        self.label.setText("this os tje UPDATED text mamu")
+        self.update()
         print("Button is Clicked")
+
+    def update(self):
+        self.label.adjustSize()
 
 
 def window():
