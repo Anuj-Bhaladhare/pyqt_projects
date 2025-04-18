@@ -7,3 +7,37 @@
 
 
 
+C:\Users\anujb\AppData\Local\Programs\Python\Python312\Scripts
+pyuic5 buttonTest.ui -o buttonexample.py 
+{pyuic5 ../../buttonTest.ui -o buttonexample.py}    --> Command is Working
+
+
+this also the working command :-> myenv\Scripts\pyuic5 source_file.ui -o result_file.py
+
+
+
+
+
+
+
+
+
+
+
+
+# ================>> Template GUI <<================
+
+from PyQt5.QtWidgets import QApplication, QWidget, QGridLayout, QPushButton
+
+
+class UI(QWidget):
+    def __init__(self):
+        super().__init__()
+
+
+app = QApplication([])
+window = UI()
+window.show()
+app.exec_()
+
+
