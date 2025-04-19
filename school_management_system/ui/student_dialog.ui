@@ -65,8 +65,8 @@ QComboBox {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
+      <x>20</x>
+      <y>40</y>
       <width>391</width>
       <height>31</height>
      </rect>
@@ -85,18 +85,25 @@ QComboBox {
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>348</x>
-      <y>560</y>
+      <x>498</x>
+      <y>550</y>
       <width>151</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   background-color: #757575;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 15px;
+}</string>
     </property>
     <property name="text">
      <string>Cancel</string>
@@ -105,18 +112,25 @@ QComboBox {
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>560</y>
+      <x>320</x>
+      <y>550</y>
       <width>161</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+   background-color: #34D481;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 15px;
+}</string>
     </property>
     <property name="text">
      <string>Add Student</string>
