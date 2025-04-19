@@ -27,18 +27,37 @@ this also the working command :-> myenv\Scripts\pyuic5 source_file.ui -o result_
 
 # ================>> Template GUI <<================
 
-from PyQt5.QtWidgets import QApplication, QWidget, QGridLayout, QPushButton
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
 
-
-class UI(QWidget):
+class MyWindow(QMainWindow):
     def __init__(self):
-        super().__init__()
+        super(MyWindow, self).__init__()
+        self.setGeometry(200, 200, 800, 500)
+        self.setWindowTitle("Tutorial 2 ANUJ")
+        self.initUI()
+
+    def initUI(self):
+        self.label = QtWidgets.QLabel(self)
+        self.label.setText("this is the Tutorial 2 Lable")
+        self.label.move(50, 50)
+
+        self.btn = QtWidgets.QPushButton(self)
+        self.btn.setText("Click Me!")
+        self.btn.clicked.connect(self.clicked_button)
+
+    def clicked_button(self):
+        print("Button is Clicked")
 
 
-app = QApplication([])
-window = UI()
-window.show()
-app.exec_()
+def window():
+    app = QApplication(sys.argv)
+    win = MyWindow()
+    win.show()
+    sys.exit(app.exec_())
+
+window()
 
 
 
