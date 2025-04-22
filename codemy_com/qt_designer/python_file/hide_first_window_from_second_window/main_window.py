@@ -9,9 +9,23 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from second_window import Ui_SecondWindow
+from functools import partial  # Add at the top
+import sys
 
 
 class Ui_MainWindow(object):
+    def open_second_window(self, MainWindow):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_SecondWindow()
+        self.ui.setupUi(self.window, MainWindow)
+        self.window.show()
+
+    def submmit_text_second_window(self):
+        contant = self.lineEdit.text()
+        self.ui.label.setText(contant)
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(486, 497)
@@ -30,12 +44,14 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pushButton.setFont(font)
+        self.pushButton.clicked.connect(self.submmit_text_second_window)
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout.addWidget(self.pushButton)
         self.pushButton_2 = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setPointSize(16)
         self.pushButton_2.setFont(font)
+        self.pushButton_2.clicked.connect(self.open_second_window, MainWindow)
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout.addWidget(self.pushButton_2)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -55,3 +71,14 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "Submit"))
         self.pushButton_2.setText(_translate("MainWindow", "Open Window"))
+
+
+def window():
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+window()

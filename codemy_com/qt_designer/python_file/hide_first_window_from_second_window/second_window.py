@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_SecondWindow(object):
-    def setupUi(self, SecondWindow):
+    def setupUi(self, SecondWindow, MainWindow):
         SecondWindow.setObjectName("SecondWindow")
         SecondWindow.resize(595, 245)
         self.centralwidget = QtWidgets.QWidget(SecondWindow)
@@ -33,12 +33,14 @@ class Ui_SecondWindow(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.pushButton_3.setFont(font)
+        self.pushButton_3.clicked.connect(self.hide_main_window(MainWindow))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout.addWidget(self.pushButton_3)
         self.pushButton_4 = QtWidgets.QPushButton(self.widget)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.pushButton_4.setFont(font)
+        self.pushButton_4.clicked.connect(self.show_main_window(MainWindow))
         self.pushButton_4.setObjectName("pushButton_4")
         self.horizontalLayout.addWidget(self.pushButton_4)
         SecondWindow.setCentralWidget(self.centralwidget)
@@ -52,6 +54,12 @@ class Ui_SecondWindow(object):
 
         self.retranslateUi(SecondWindow)
         QtCore.QMetaObject.connectSlotsByName(SecondWindow)
+
+    def hide_main_window(self, main_w):
+        main_w.hide()
+
+    def show_main_window(self, main_w):
+        main_w.show()
 
     def retranslateUi(self, SecondWindow):
         _translate = QtCore.QCoreApplication.translate
