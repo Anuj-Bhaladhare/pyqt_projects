@@ -68,5 +68,3 @@ class MainController:
         index = self.view.main_body_container.indexOf(self.user_screen)
         self.view.main_body_container.setCurrentIndex(index)
 
-
-

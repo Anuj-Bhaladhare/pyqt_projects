@@ -1,5 +1,5 @@
 
-class LoginController:
+class SingUpController:
     def __init__(self, view):
         self.view = view
 
@@ -7,17 +7,16 @@ class LoginController:
 #################### DEFINE CONNECTION HERE ############################
     def setup_connection(self):
         # ------------- PushButton ---------------
-        self.view.navigate_singup_btn.clicked.connect(self.navigate_singup_page)
-        self.view.login_btn.clicked.connect(self.user_login)
+        self.view.navigate_login_btn.clicked.connect(self.navigate_login_page)
+        self.view.sing_up_btn.clicked.connect(self.user_sing_up)
     
 
 #########################################################################
 #################### DEFINE FUNCTION HERE ###############################
     
-    # ---------------- Click the Home Button ---------------- 
-    def navigate_singup_page(self):
-        print("navigate_singup_page navigate_singup_page navigate_singup_page")
+    def navigate_login_page(self):
+        print("navigate_login_page navigate_login_page navigate_login_page")
 
 
-    def user_login(self):
-        print("user_login user_login user_login")
+    def user_sing_up(self):
+        print("user_sing_up user_sing_up user_sing_up")
