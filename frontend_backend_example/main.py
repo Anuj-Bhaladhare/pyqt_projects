@@ -30,7 +30,11 @@ class UI_OpenImage(qt_widget.QMainWindow):
         self.show()
 
     def user_sign_up(self):
-        user_sign_up(self.persion_name.text(), self.persion_last_name.text(), self.persion_email_name.text(), self.persion_pass_name.text())
+        # check all the value is Present or NOT
+        if self.persion_name.text() == "" and self.persion_last_name.text() == "" and self.persion_email_name.text() == "" and self.persion_pass_name.text() == "":
+            print("please fealed all the details properlly...")
+        else:
+            user_sign_up(self.persion_name.text(), self.persion_last_name.text(), self.persion_email_name.text(), self.persion_pass_name.text())
 
 
 
